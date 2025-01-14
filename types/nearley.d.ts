@@ -1,7 +1,6 @@
 /// <reference types="nearley" />
 
-declare module 'nearley/lib/generate' {
-
+declare module "nearley/lib/generate.js" {
   function generate(parser: nearley.Parser, exportName: any): any;
   namespace generate {
     function _default(parser: nearley.Parser, exportName: string): string;
@@ -23,27 +22,27 @@ declare module 'nearley/lib/generate' {
   export as namespace generate;
 }
 
-declare module 'nearley/lib/nearley-language-bootstrapped' {
+declare module "nearley/lib/nearley-language-bootstrapped.js" {
   import type { CompiledRules } from "nearley";
-  const compileRules: CompiledRules
+  const compileRules: CompiledRules;
   export default compileRules;
   export as namespace compileRules;
 }
 
-declare module 'nearley/lib/compile' {
-  export interface Structure { }
+declare module "nearley/lib/compile.js" {
+  export interface Structure {}
 
   function compile(structure: any, opts: any): nearley.Grammar;
 
   export default compile;
+  export as namespace compile;
 }
 
-declare module 'nearley/lib/lint' {
+declare module "nearley/lib/lint.js" {
   export interface LintOptions {
-    out?: NodeJS.WriteStream
+    out?: NodeJS.WriteStream;
   }
 
   export default function lint(grm: nearley.Grammar, opts: LintOptions): void;
   export as namespace lint;
 }
-
